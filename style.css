@@ -1,40 +1,101 @@
+  t/* ================= BASE ================= */
 body {
   margin: 0;
-  font-family: Arial;
-  background: radial-gradient(circle, #0f0c29, #302b63, #24243e);
+  font-family: 'Arial', sans-serif;
   color: white;
   text-align: center;
   overflow: hidden;
+
+  /* 🎨 MULTICOLOR PREMIUM BACKGROUND */
+  background: linear-gradient(-45deg,
+    #ff4e50,
+    #f9d423,
+    #24c6dc,
+    #5433ff,
+    #ff6a00
+  );
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
 }
 
-/* animated glow background */
-body::before {
-  content: "";
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 40%);
-  animation: float 12s infinite linear;
+/* animated background movement */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-@keyframes float {
-  0% { transform: translate(0,0); }
-  50% { transform: translate(-15%, -10%); }
-  100% { transform: translate(0,0); }
-}
-
+/* ================= SCREEN LAYOUT ================= */
 .screen, .intro {
   display: none;
   height: 100vh;
+  width: 100vw;
+
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  position: relative;
-  z-index: 2;
-  animation: fade 1s ease;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  padding: 20px;
+  box-sizing: border-box;
 }
 
+/* ACTIVE SCREEN (NO SLIDING FIXED) */
 .screen.active, .intro.active {
+  display: flex;
+  animation: fade 0.4s ease;
+}
+
+/* ================= CLEAN FADE (NO SLIDE) ================= */
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ================= GLOW TEXT ================= */
+.glow {
+  text-shadow: 0 0 10px #fff,
+               0 0 20px #ff00ff,
+               0 0 30px #00ffff;
+  font-size: 28px;
+}
+
+/* ================= BUTTON STYLE (PREMIUM) ================= */
+button {
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: none;
+  margin-top: 20px;
+  font-size: 16px;
+
+  cursor: pointer;
+
+  /* gradient button */
+  background: linear-gradient(45deg, #ff512f, #dd2476, #24c6dc);
+  color: white;
+
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.08);
+}
+
+/* ================= RESPONSIVE (MOBILE FIX) ================= */
+@media (max-width: 600px) {
+  .glow {
+    font-size: 22px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 10px 24px;
+  }
+}.screen.active, .intro.active {
   display: flex;
 }
 
