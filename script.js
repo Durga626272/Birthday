@@ -45,8 +45,7 @@ function nextScreen(id) {
 
 // ================= TYPEWRITER =================
 function typeMessage() {
-  const text =
-    "Happy Birthday 🎉\nYou are not just special... you are unforgettable ✨";
+  const text = "Happy Birthday 🎉\n\nSome people quietly change the world just by existing...\nYou are one of them ✨\n\nStay happy, stay amazing 💖";
 
   let i = 0;
   const el = document.getElementById("msg");
