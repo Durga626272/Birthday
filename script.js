@@ -45,7 +45,7 @@ function nextScreen(id) {
 
 // ================= TYPEWRITER =================
 function typeMessage() {
-  const text = "Wishing you many more happy returns of the day chotu 🎉\n\nSome people quietly change the world just by existing...\nYou are one of them ✨\n\nStay happy, stay amazing 💖\n\n— made with a little code and a lot of feelings ❤️";
+  const text = "Wishing you many more happy returns of the day chotu 🎉\n\nSome people quietly change the world just by existing...\nYou are one of them ✨\n\nStay happy, stay amazing 💖. You are very special to me don't ask me why because I too don't know the answer.\n\n— made with a little code and a lot of feelings ❤️";
 
   let i = 0;
   const el = document.getElementById("msg");
