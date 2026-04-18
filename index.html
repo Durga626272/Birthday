@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surprise 🎉</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div class="intro active" id="screen1">
+  <h1 class="glow">...initializing memory...</h1>
+  <button onclick="nextScreen('screen2')">Enter</button>
+</div>
+
+<div class="screen" id="screen2">
+  <h2>Loading emotions...</h2>
+  <button onclick="nextScreen('screen3')">Continue</button>
+</div>
+
+<div class="screen" id="screen3">
+  <h2>Before we begin...</h2>
+  <p>Turn your volume on 🎧</p>
+  <button onclick="nextScreen('screen4')">Ready</button>
+</div>
+
+<div class="screen" id="screen4">
+  <h2>Final door is opening...</h2>
+  <button onclick="nextScreen('screen5')">Open</button>
+</div>
+
+<div class="screen" id="screen5">
+  <h1 id="msg"></h1>
+</div>
+
+<audio id="bgm" loop preload="auto">
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5c2f7c7b6a.mp3?filename=soft-piano-ambient-110397.mp3" type="audio/mpeg">
+</audio>
+
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
