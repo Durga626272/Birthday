@@ -1,31 +1,39 @@
-  t/* ================= BASE ================= */
-body {
+
+/* ================= RESET ================= */
+* {
   margin: 0;
-  font-family: 'Arial', sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= BODY (FIX WHITE SCREEN + PREMIUM BG) ================= */
+body {
+  font-family: Arial, sans-serif;
   color: white;
   text-align: center;
   overflow: hidden;
 
-  /* 🎨 MULTICOLOR PREMIUM BACKGROUND */
+  /* 🔥 attractive multicolor background */
   background: linear-gradient(-45deg,
-    #ff4e50,
-    #f9d423,
-    #24c6dc,
-    #5433ff,
-    #ff6a00
+    #0f0c29,
+    #302b63,
+    #ff416c,
+    #ff4b2b,
+    #1f4037,
+    #99f2c8
   );
   background-size: 400% 400%;
-  animation: gradientBG 12s ease infinite;
+  animation: gradientMove 10s ease infinite;
 }
 
-/* animated background movement */
-@keyframes gradientBG {
+/* animated background */
+@keyframes gradientMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* ================= SCREEN LAYOUT ================= */
+/* ================= SCREENS ================= */
 .screen, .intro {
   display: none;
   height: 100vh;
@@ -35,57 +43,61 @@ body {
   align-items: center;
   flex-direction: column;
 
-  position: absolute;
-  top: 0;
-  left: 0;
-
   padding: 20px;
-  box-sizing: border-box;
 }
 
-/* ACTIVE SCREEN (NO SLIDING FIXED) */
+/* ACTIVE SCREEN */
 .screen.active, .intro.active {
   display: flex;
-  animation: fade 0.4s ease;
+  animation: fadeIn 0.5s ease;
 }
 
-/* ================= CLEAN FADE (NO SLIDE) ================= */
-@keyframes fade {
+/* clean fade */
+@keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-/* ================= GLOW TEXT ================= */
-.glow {
-  text-shadow: 0 0 10px #fff,
-               0 0 20px #ff00ff,
-               0 0 30px #00ffff;
-  font-size: 28px;
+/* ================= TEXT ================= */
+h1, h2, p {
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.6);
 }
 
-/* ================= BUTTON STYLE (PREMIUM) ================= */
+/* glowing heading */
+.glow {
+  font-size: 28px;
+  text-shadow:
+    0 0 10px #fff,
+    0 0 20px #ff00ff,
+    0 0 30px #00ffff;
+}
+
+/* ================= BUTTON (FIX VISIBILITY) ================= */
 button {
-  padding: 12px 30px;
+  margin-top: 20px;
+  padding: 12px 28px;
   border-radius: 30px;
   border: none;
-  margin-top: 20px;
-  font-size: 16px;
 
+  font-size: 16px;
+  font-weight: bold;
+
+  color: white; /* 🔥 FIX TEXT VISIBILITY */
+  background: linear-gradient(45deg, #ff512f, #dd2476, #24c6dc);
+
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
   cursor: pointer;
 
-  /* gradient button */
-  background: linear-gradient(45deg, #ff512f, #dd2476, #24c6dc);
-  color: white;
-
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
   transition: 0.3s ease;
 }
 
+/* hover effect */
 button:hover {
   transform: scale(1.08);
 }
 
-/* ================= RESPONSIVE (MOBILE FIX) ================= */
+/* ================= MOBILE FIX ================= */
 @media (max-width: 600px) {
   .glow {
     font-size: 22px;
@@ -93,32 +105,6 @@ button:hover {
 
   button {
     font-size: 14px;
-    padding: 10px 24px;
+    padding: 10px 22px;
   }
-}.screen.active, .intro.active {
-  display: flex;
-}
-
-.glow {
-  text-shadow: 0 0 20px white, 0 0 40px #8e2de2;
-}
-
-button {
-  padding: 12px 28px;
-  border-radius: 30px;
-  border: none;
-  margin-top: 20px;
-  font-size: 16px;
-  background: white;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover {
-  transform: scale(1.1);
-}
-
-@keyframes fade {
-  from { opacity: 0; transform: scale(1.05); }
-  to { opacity: 1; transform: scale(1); }
 }
